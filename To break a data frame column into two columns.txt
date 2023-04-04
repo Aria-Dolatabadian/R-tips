@@ -1,0 +1,11 @@
+# Load the tidyr package
+library(tidyr)
+
+# Create an example data frame with a column to split
+df <- data.frame(col = c("a,b", "c,d", "e,f"), stringsAsFactors = FALSE)
+
+# Split the column into two columns
+df_split <- separate(df, col, into = c("col1", "col2"), sep = ",")
+
+# Print the resulting data frame
+print(df_split)
