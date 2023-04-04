@@ -1,0 +1,171 @@
+
+dna_seq <- "ATACGACGACGAGACGACGACCAGCAGCGACATCCTACATCAGACACTATTACG"
+dna_seq2 <- "ACGCAATAGCAGCATAGACAGCATAAGACGACGACAGCAGCAGACGACGACGACAGCATATACTAC"
+
+
+seq_length <- nchar(dna_seq)
+nucleotide_counts <- table(strsplit(dna_seq, "")[[1]])
+nucleotide_percentages <- nucleotide_counts/seq_length * 100
+
+
+seq_length2 <- nchar(dna_seq2)
+nucleotide_counts2 <- table(strsplit(dna_seq2, "")[[1]])
+nucleotide_percentages2 <- nucleotide_counts2/seq_length2 * 100
+
+library(stringr)
+gc_count <- sum(str_count(dna_seq, "G") + str_count(dna_seq, "C"))
+gc_content <- gc_count/seq_length * 100
+
+
+library(stringr)
+gc_count2 <- sum(str_count(dna_seq2, "G") + str_count(dna_seq2, "C"))
+gc_content2 <- gc_count2/seq_length2 * 100
+
+cat("Length:\n")
+print(seq_length)
+
+cat("Counts:\n")
+print(nucleotide_counts)
+
+cat("Percentages:\n")
+print(nucleotide_percentages)
+
+cat("GC content (%):\n")
+print(gc_content)
+
+
+cat("Length2:\n")
+print(seq_length2)
+
+cat("Counts2:\n")
+print(nucleotide_counts2)
+
+cat("Percentages2:\n")
+print(nucleotide_percentages2)
+
+cat("GC content2 (%):\n")
+print(gc_content2)
+
+
+A_content <-sum(str_count(dna_seq, "A"))
+cat("A_content:\n")
+print(A_content)
+
+C_content <-sum(str_count(dna_seq, "C"))
+cat("C_content:\n")
+print(C_content)
+
+G_content <-sum(str_count(dna_seq, "G"))
+cat("G_content:\n")
+print(G_content)
+
+T_content <-sum(str_count(dna_seq, "T"))
+cat("T_content:\n")
+print(T_content)
+
+
+A_content2 <-sum(str_count(dna_seq2, "A"))
+cat("A_content2:\n")
+print(A_content2)
+
+C_content2 <-sum(str_count(dna_seq2, "C"))
+cat("C_content2:\n")
+print(C_content2)
+
+G_content2 <-sum(str_count(dna_seq2, "G"))
+cat("G_content2:\n")
+print(G_content2)
+
+T_content2 <-sum(str_count(dna_seq2, "T"))
+cat("T_content2:\n")
+print(T_content2)
+
+
+A_percentage <- A_content/seq_length 
+cat("A_percentage:\n")
+print(A_percentage)
+
+C_percentage <- C_content/seq_length 
+cat("C_percentage:\n")
+print(C_percentage)
+
+G_percentage <- G_content/seq_length 
+cat("G_percentage:\n")
+print(G_percentage)
+
+T_percentage <- T_content/seq_length 
+cat("T_percentage:\n")
+print(T_percentage)
+
+
+
+A_percentage2 <- A_content2/seq_length2 
+cat("A_percentage2:\n")
+print(A_percentage2)
+
+C_percentage2 <- C_content2/seq_length2 
+cat("C_percentage2:\n")
+print(C_percentage2)
+
+G_percentage2 <- G_content2/seq_length2 
+cat("G_percentage2:\n")
+print(G_percentage2)
+
+T_percentage2 <- T_content2/seq_length2 
+cat("T_percentage2:\n")
+print(T_percentage2)
+
+
+
+df <- data.frame(A_percentage, C_percentage, G_percentage, T_percentage)
+print(df)
+
+df2 <- data.frame(A_percentage2, C_percentage2, G_percentage2, T_percentage2)
+print(df2)
+
+
+transposed_data <- t(df)
+transposed_data2 <- t(df2)
+
+write.csv(transposed_data, file = "my_data.csv", row.names = FALSE)
+write.csv(transposed_data2, file = "my_data2.csv", row.names = FALSE)
+
+
+library(seqLogo) 
+
+w <-read.csv("my_data.csv")
+x <-read.csv("my_data2.csv")
+df <- rbind(w, x)
+print(df)
+
+
+# Split the data frame into two columns with 4 rows each
+df1 <- df[1:4, ]
+df2 <- df[5:8, ]
+df_combined <- cbind(df1, df2)
+print(df_combined)
+
+
+
+df <-(df_combined)
+
+p <- makePWM(df)
+slotNames(p)
+pwm(p)
+ic(p)
+consensus(p)
+seqLogo(p)
+seqLogo(p, ic.scale=FALSE)
+
+
+seqLogo(p, fill=c(A="#4daf4a", C="#377eb8", G="#ffd92f", T="#e41a1c"),
+        ic.scale=FALSE)
+
+
+r <- makePWM(df, alphabet="RNA")
+seqLogo(r, ic.scale=FALSE)
+
+
+seqLogo(r, fill=c(A="#4daf4a", C="#377eb8", G="#ffd92f", U="#e41a1c"),
+        ic.scale=FALSE)
+
