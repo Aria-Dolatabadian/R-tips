@@ -1,0 +1,31 @@
+
+#Row-wise combination
+
+# Create two example data frames
+df1 <- data.frame(id = c(1, 2, 3), value = c("A", "B", "C"))
+df2 <- data.frame(id = c(4, 5, 6), value = c("D", "E", "F"))
+
+print(df1)
+print(df2)
+
+# Combine the two data frames row-wise with rbind()
+combined_df <- rbind(df1, df2)
+
+# Print the combined data frame
+print(combined_df)
+
+#Column-wise combination
+
+# Create two example data frames
+df1 <- data.frame(id = c(1, 2, 3), value1 = c("A", "B", "C"))
+df2 <- data.frame(id = c(1, 2, 3), value2 = c("D", "E", "F"))
+
+print(df1)
+print(df2)
+
+# Combine the two data frames column-wise with cbind()
+combined_df <- cbind(df1, df2$value2)
+
+# Print the combined data frame
+print(combined_df)
+
