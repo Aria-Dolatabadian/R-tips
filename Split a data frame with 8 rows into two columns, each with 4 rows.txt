@@ -1,0 +1,14 @@
+# Create an example data frame with 8 rows
+df <- data.frame(col = 1:8)
+
+print(df)
+
+# Split the data frame into two columns with 4 rows each
+df1 <- df[1:4, ]
+df2 <- df[5:8, ]
+
+# Combine the two columns into a single data frame
+df_combined <- cbind(df1, df2)
+
+# Print the resulting data frame
+print(df_combined)
