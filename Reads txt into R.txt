@@ -1,1 +1,1 @@
-my_matrix <- read.table("my_matrix.txt", sep = "\t", header = FALSE)
+my_matrix <- read.table("my_matrix.txt", sep = "\t", header = TRUE)
