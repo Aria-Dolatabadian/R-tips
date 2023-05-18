@@ -1,0 +1,7 @@
+# Save an R object in .rds format
+my_object <- "Hello, world!"
+saveRDS(my_object, file = "my_object.rds")
+
+# Load the .rds file and retrieve the object
+loaded_object <- readRDS("my_object.rds")
+print(loaded_object)
