@@ -5,7 +5,6 @@ library(tidyr)
 df <- data.frame(col1 = c("A_B", "C_D", "E_F"), col2 = 1:3)
 
 print(df)
-
 # Split the "col1" column into two columns based on the "_" separator
 df_split <- separate(df, col1, into = c("col1a", "col1b"), sep = "_")
 
