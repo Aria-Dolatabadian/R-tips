@@ -14,6 +14,5 @@ t_Geno <- transpose(Geno)
 colnames(t_Geno) <- rownames(Geno)
 rownames(t_Geno) <- colnames(Geno)
 
-
 #Export CSV File
 write.csv(t_Geno, file = "t_Geno.csv")
