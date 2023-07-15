@@ -2,7 +2,6 @@
 dna_seq <- "ATACGACGACGAGACGACGACCAGCAGCGACATCCTACATCAGACACTATTACG"
 dna_seq2 <- "ACGCAATAGCAGCATAGACAGCATAAGACGACGACAGCAGCAGACGACGACGACAGCATATACTAC"
 
-
 seq_length <- nchar(dna_seq)
 nucleotide_counts <- table(strsplit(dna_seq, "")[[1]])
 nucleotide_percentages <- nucleotide_counts/seq_length * 100
