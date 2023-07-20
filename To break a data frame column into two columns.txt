@@ -1,6 +1,5 @@
 # Load the tidyr package
 library(tidyr)
-
 # Create an example data frame with a column to split
 df <- data.frame(col = c("a,b", "c,d", "e,f"), stringsAsFactors = FALSE)
 
