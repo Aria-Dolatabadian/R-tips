@@ -21,7 +21,6 @@ print(nucleotide_percentages)
 cat("GC content (%):\n")
 print(gc_content)
 
-
 A_content <-sum(str_count(dna_seq, "A"))
 cat("A_content:\n")
 print(A_content)
