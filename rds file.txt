@@ -1,4 +1,5 @@
 # Save an R object in .rds format
+
 my_object <- "Hello, world!"
 saveRDS(my_object, file = "my_object.rds")
 
