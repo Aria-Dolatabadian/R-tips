@@ -53,7 +53,6 @@ T_percentage <- T_content/seq_length
 cat("T_percentage:\n")
 print(T_percentage)
 
-
 df <- data.frame(A_percentage, C_percentage, G_percentage, T_percentage)
 print(df)
 
