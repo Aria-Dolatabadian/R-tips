@@ -6,7 +6,6 @@ seq_length <- nchar(dna_seq)
 nucleotide_counts <- table(strsplit(dna_seq, "")[[1]])
 nucleotide_percentages <- nucleotide_counts/seq_length * 100
 
-
 seq_length2 <- nchar(dna_seq2)
 nucleotide_counts2 <- table(strsplit(dna_seq2, "")[[1]])
 nucleotide_percentages2 <- nucleotide_counts2/seq_length2 * 100
