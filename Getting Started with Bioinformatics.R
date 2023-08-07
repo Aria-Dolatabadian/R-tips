@@ -10,7 +10,6 @@ df
 
 #How to import and view a excel files into R
 
-
 #install.packages("openxlsx", dependencies = TRUE)
 
 #Import and view an excel file into R, but this time we will use a package ‘openxlsx’ 
