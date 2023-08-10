@@ -8,5 +8,6 @@ print(df)
 # Split the "col1" column into two columns based on the "_" separator
 df_split <- separate(df, col1, into = c("col1a", "col1b"), sep = "_")
 
+
 # Print the resulting data frame
 print(df_split)
