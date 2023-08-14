@@ -5,6 +5,7 @@ install.packages("data.table")
 library(data.table)
 
 #Import geno file
+
 Geno <- read.csv("Transpose geno file.csv", row.names = 1, header = TRUE)
 
 #Transpose
