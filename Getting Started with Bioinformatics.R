@@ -7,7 +7,6 @@ df <- read.table('CRD.txt', header = TRUE, sep='\t')
 #View data
 df 
 
-
 #How to import and view a excel files into R
 
 #install.packages("openxlsx", dependencies = TRUE)
