@@ -1,6 +1,6 @@
 # Create an example data frame with 8 rows
-df <- data.frame(col = 1:8)
 
+df <- data.frame(col = 1:8)
 print(df)
 
 # Split the data frame into two columns with 4 rows each
