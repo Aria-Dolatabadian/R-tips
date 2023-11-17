@@ -1,0 +1,13 @@
+#Open the old version of R and run the following command in the console to list all installed packages:
+
+installed.packages()
+write.csv(installed.packages(), "installed_packages.csv")
+
+
+#Open the new version of R and run the following commands to install the packages:
+
+# Read the list of installed packages from the exported CSV file
+installed_packages <- read.csv("installed_packages.csv")
+
+# Install the packages
+install.packages(installed_packages$Package)
